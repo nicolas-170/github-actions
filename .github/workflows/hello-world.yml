@@ -15,7 +15,7 @@ jobs:
       - name: Install Task
         uses: go-task/setup-task@v2
         with:
-          version: 2.5.9
+          version: 1.25.9
           
       # Clonamos el repositorio 
       - uses: actions/checkout@v4
