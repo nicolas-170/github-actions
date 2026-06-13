@@ -9,15 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      # Instalamos go
-      - name: Install Task
-        uses: go-task/setup-task@v2
-        with:
-          version: 3.50.0
-          
       # Clonamos el repositorio 
-      - uses: actions/checkout@v4
+      - name: Clomamos repositorio
+        uses: actions/checkout@v4
 
-      # Corremos script en go
+      # Instalar go
+      - name: Configurar Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.25.9'          
+
+      # Corremos el script de go
       - name: Correr script
         run: go run main.go
