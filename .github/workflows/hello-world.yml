@@ -1,0 +1,25 @@
+name: Hello-world
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Instalamos go
+      - name: Install Task
+        uses: go-task/setup-task@v2
+        with:
+          version: 2.5.9
+          
+      # Clonamos el repositorio 
+      - uses: actions/checkout@v4
+
+      # Corremos script en go
+      - name: Correr script
+        run: go run .\main.go
