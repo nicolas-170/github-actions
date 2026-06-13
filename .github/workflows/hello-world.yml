@@ -22,4 +22,4 @@ jobs:
 
       # Corremos script en go
       - name: Correr script
-        run: go run .\main.go
+        run: go run main.go
