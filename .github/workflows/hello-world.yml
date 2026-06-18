@@ -1,11 +1,11 @@
 name: Hello-world
+run-name: Aprendiendo github actions
 on:
   push:
     branches: [ "main" ]
 
-  workflow_dispatch:
 jobs:
-  build:
+  Hello-world:
     runs-on: ubuntu-latest
     
     steps:
