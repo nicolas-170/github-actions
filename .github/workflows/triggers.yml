@@ -31,5 +31,5 @@ jobs:
     if: github.event_name == 'push'
     steps:
       - name: Trigger 3
-        run: echo "Se subio un cambio a la rama $GITHUB_REF_NAME"
+        run: echo "Se subio un cambio a la rama ${{github.ref_name}}"
    
