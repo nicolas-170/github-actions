@@ -8,15 +8,14 @@ on:
         required: true
         type: string
 
-uso-variables:
-  runs-on: ubuntu-latest
-  env:
-    mensaje: hoy es un dia maravilloso
-  steps:
-    - name: Uso de Variables
-      run: |
-        echo "Se ejecuto un: ${{github.event_name}}, y este es el mensaje ${{env.mensaje}}"
+jobs:
+  uso-variables:
+    runs-on: ubuntu-latest
+    env:
+      mensaje: hoy es un dia maravilloso
+    steps:
+      - name: Uso de Variables
+        run: echo "Se ejecuto un: ${{github.event_name}}, y este es el mensaje ${{env.mensaje}}"
 
-    - name: Uso de Variables 2
-      run: |
-        echo "Un gran dia llegara para ${{github.event.inputs.nombre}}"
+      - name: Uso de Variables 2
+        run: echo "Un gran dia llegara para ${{github.event.inputs.nombre}}"
