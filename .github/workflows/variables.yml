@@ -15,7 +15,11 @@ jobs:
       mensaje: hoy es un dia maravilloso
     steps:
       - name: Uso de Variables
-        run: echo "Se ejecuto un: ${{github.event_name}}, y este es el mensaje ${{env.mensaje}}"
+        run: |
+          echo "Se ejecuto un: $GITHUB_EVENT_NAME, y este es el mensaje $mensaje"
 
       - name: Uso de Variables 2
-        run: echo "Un gran dia llegara para ${{github.event.inputs.nombre}}"
+        env:
+          NOMBRE_USUARIO: ${{ github.event.inputs.nombre }}
+        run: |
+          echo "Un gran dia llegara para $NOMBRE_USUARIO"
